@@ -1,0 +1,55 @@
+/*
+    Program: Display and Count Digits
+    Description: Accepts a number, displays each digit, and counts the total number of digits.
+    Concepts:
+        - Class and Object
+        - Method
+        - while loop
+        - Modulus operator
+        - Integer division
+        - Scanner
+    Author: Mayuri Bondge
+*/
+
+import java.util.Scanner;
+
+class Digit
+{
+    public int DisplayDigit(int iNo)
+    {
+        int iDigit = 0;
+        int iCount = 0;
+
+        while(iNo != 0)
+        {
+            iDigit = iNo % 10;
+            System.out.println(iDigit);
+
+            iNo = iNo / 10;
+            iCount++;
+        }
+
+        return iCount;
+    }
+}
+
+public class display_digits_count 
+{
+    public static void main(String[] args)
+    {
+        int iNo = 0;
+        int iRet = 0;
+
+        Scanner sobj = new Scanner(System.in);
+        Digit dobj = new Digit();
+
+        System.out.println("Enter a number:");
+        iNo = sobj.nextInt();
+
+        iRet = dobj.DisplayDigit(iNo);
+
+        System.out.println("Number of digits is: " + iRet);
+
+        sobj.close();
+    }
+}
